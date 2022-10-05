@@ -1,0 +1,70 @@
+//#1
+// Creating 1-tuple
+using System;
+
+namespace tuples{
+    class tupling{
+        static void Main(string[] args){
+            Tuple<string>MyStringTuple = new Tuple<string>("HelloWorld");
+            Tuple<string,int> MyCustomTuple = new Tuple<string,int>("Daniel",28);
+            Tuple<int, int, int, Tuple<int>> MyMaxTuple = new Tuple<int, int, int, Tuple<int>>(1, 2, 3, new Tuple<int>(3));
+            Console.WriteLine($"The {nameof(MyStringTuple)} has the following elements: {MyStringTuple}");
+            Console.WriteLine($"The {nameof(MyCustomTuple)} has the following elements: {MyCustomTuple}");
+            Console.WriteLine($"The {nameof(MyMaxTuple)} has the following elements: {MyMaxTuple}");
+            Console.ReadKey(); ;
+        }
+    }
+}
+    
+
+//#2
+// C# program to create tuple 
+// passing the variables and returning them back to the main function
+using System;
+
+
+public class Program {
+    //we are returning multiple values from the function "ReturnMultipleValues"
+    // we are specifying the functions return type with Tuple<string, string, int>
+    public static Tuple<string, string, int> ReturnMultipleValues()
+    {
+        var result = Tuple.Create<string, string, int>("October", "Halloween",31);
+        return result;
+    }
+    public static void Main() {
+        // we saved the the return value in a var type variable called returnedvalues
+        var returnedvalues = ReturnMultipleValues();
+        Console.WriteLine(returnedvalues);
+    }
+
+}
+
+// output
+//(October, Halloween, 31)
+
+//#3
+// store the resulting tuples in an array 
+using System;
+
+namespace tuples{
+    class tupling{
+        static void Main(string[] args){
+            var tupleArray = new(int, string)[]
+            {
+                (1, "cow1"),
+                (5, "chickens1"),
+                (1, "airplane1")
+            };
+          Console.WriteLine(tupleArray);
+        }
+    }
+}
+
+/*
+references
+https://www.geeksforgeeks.org/c-sharp-tuple/
+https://www.delftstack.com/howto/csharp/return-
+multiple-values-from-a-function-in-csharp/#return-multiple-values-from-a-
+function-with-the-tuples-class-in-c
+https://www.pluralsight.com/guides/working-tuples-csharp
+
