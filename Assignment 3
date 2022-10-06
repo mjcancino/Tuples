@@ -60,6 +60,40 @@ namespace tuples{
     }
 }
 
+// Compound interest 
+ <math.h> // header you can remove. some ide dont accept it 
+using System;
+namespace compund
+{
+    class compound
+    {
+        static void Main(string[] args)
+        {
+            //we will enter the enter the values for interest rate, years, annual and initial start(amount)
+            double Total = 0, interestRate, years, annual, Amount;
+            Console.Write("Enter the Initial Amount : ");
+            Amount = Convert.ToDouble(Console.ReadLine());
+            Console.Write("Enter the Rate of Interest : ");
+            interestRate = Convert.ToDouble(Console.ReadLine()) / 100;
+            Console.Write("Enter the Number of Years : ");
+            years = Convert.ToDouble(Console.ReadLine());
+            Console.Write("How Much will you add annually: ");
+            annual = Convert.ToDouble(Console.ReadLine());
+            //it will iterate for how many years you choose
+            for (int t = 1; t < years + 1; t++)
+            {
+                Total = Amount * Math.Pow((1 + interestRate / annual), 
+                                         (annual * t));
+                Console.Write("Your Total for Year {0} "
+                            + "is {1:F0}. \n", t, Total);
+ 
+            }
+ 
+            Console.ReadLine();
+        }
+    }
+}
+
 /*
 references
 https://www.geeksforgeeks.org/c-sharp-tuple/
